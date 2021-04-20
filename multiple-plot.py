@@ -10,7 +10,8 @@ def getCommand(ssd, i):
     tmp = "/mnt/" + ssd
     dst = "/mnt/sda"
     log = "/home/breakertt/log/" + ssd + "-" + str(i) + "-" + datetime.now().isoformat(timespec='microseconds') + ".log"
-    return script + " " + plot_bin + " " + tmp + " " + dst + " " + log
+    node = str(ssd_list.index(ssd) // (len(ssd_list) // 2))
+    return script + " " + plot_bin + " " + tmp + " " + dst + " " + log + " " + node
 
 for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)
