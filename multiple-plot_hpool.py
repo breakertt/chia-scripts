@@ -5,10 +5,10 @@ import time
 ssd_list = ["nvme0n1", "nvme1n1", "nvme2n1", "nvme3n1"]
 
 def getCommand(ssd, i):
-    script = "/home/breakertt/toys/plot.sh"
+    script = "/home/breakertt/toys/plot_hpool.sh"
     plot_bin = "/home/breakertt/chia-plotter/chia-plotter-linux-amd64"
     tmp = "/mnt/" + ssd
-    dst = "/mnt/sda"
+    dst = "/mnt/sda/hpool"
     log = "/home/breakertt/log/" + ssd + "-" + str(i) + "-" + datetime.now().isoformat(timespec='microseconds') + ".log"
     node = str(ssd_list.index(ssd) // (len(ssd_list) // 2))
     return script + " " + plot_bin + " " + tmp + " " + dst + " " + log + " " + node
