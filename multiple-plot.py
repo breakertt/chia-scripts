@@ -13,7 +13,7 @@ def getCommand(ssd, i):
         node = "0"
     else:
         node = "1"
-    return script + " " + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i)
+    return script + " " + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i-1)
 
 for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)
