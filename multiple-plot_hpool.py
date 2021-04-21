@@ -2,19 +2,16 @@ import os
 from datetime import datetime
 import time
 
-# ssd_list = ["nvme0n1", "nvme1n1", "nvme2n1", "nvme3n1"]
-ssd_list = ["nvme0n1"]
+ssd_list = ["nvme0n1", "nvme1n1", "nvme2n1", "nvme3n1"]
 
 def getCommand(ssd, i):
     script = "/home/breakertt/toys/plot.sh"
+    plot_bin = "/home/breakertt/chia-plotter/chia-plotter-linux-amd64"
     tmp = "/mnt/" + ssd
-    dst = "/mnt/sda/test"
+    dst = "/mnt/sda"
     log = "/home/breakertt/log/" + ssd + "-" + str(i) + "-" + datetime.now().isoformat(timespec='microseconds') + ".log"
-    if ssd_list.index(ssd) < len(ssd_list) // 2:
-        node = "0"
-    else:
-        node = "1"
-    return script + " " + " " + tmp + " " + dst + " " + log + " " + node
+    node = str(ssd_list.index(ssd) // (len(ssd_list) // 2))
+    return script + " " + plot_bin + " " + tmp + " " + dst + " " + log + " " + node
 
 for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)
