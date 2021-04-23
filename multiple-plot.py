@@ -19,5 +19,5 @@ for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)
     os.system("tmux new -d -s " + ssd)
     time.sleep(0.5)
-    for i in range(1,6):
+    for i in range(1,8):
         os.system("tmux new-window -t " + ssd + ":" + str(i) + " " + getCommand(ssd, i))
