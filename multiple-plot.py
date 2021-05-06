@@ -7,7 +7,7 @@ major_sleep_seconds = 1800
 minor_sleep_seconds = 300
 
 def getCommand(ssd, hdd, i):
-    script = "/home/breakertt/toys/plot.sh"
+    script = "/home/breakertt/chia-scripts/plot.sh"
     tmp = "/mnt/" + ssd
     dst = "/mnt/" + hdd
     log = "/home/breakertt/log/" + ssd + "-" + str(i) + "-" + datetime.now().isoformat(timespec='microseconds') + ".log"
