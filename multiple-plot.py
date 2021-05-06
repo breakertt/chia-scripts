@@ -3,6 +3,9 @@ from datetime import datetime
 import time
 import math
 
+major_sleep_seconds = 1800
+minor_sleep_seconds = 300
+
 def getCommand(ssd, hdd, i):
     script = "/home/breakertt/toys/plot.sh"
     tmp = "/mnt/" + ssd
@@ -12,13 +15,13 @@ def getCommand(ssd, hdd, i):
         node = "0"
     else:
         node = "1"
-    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i)
+    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i*major_sleep_second + ssd_list.index(ssd)*minor_sleep_seconds)
     print(command)
     return command
 
 ssd_list = ["nvme0n1", "nvme1n1", "nvme2n1", "nvme3n1"]
-hdd_list = ["sda", "sdb", "sdc", "sdd", "sde", "sdf", "sdg", "sdh"]
-parallel_per_ssd = 7
+hdd_list = ["sda", "sdh", "sdc", "sdd", "sde", "sdf", "sdg", "sdb"]
+parallel_per_ssd = 8
 hdd_patition_len = math.ceil((len(ssd_list) * parallel_per_ssd) / len(hdd_list))
 for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)

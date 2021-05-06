@@ -8,8 +8,8 @@ snmp_ver="2c"
 snmp_com="public"
 
 # 三个温度值将转速划分为四个区间
-temp_threshold="60,65,70"
-fan_speed="30,40,80,100"
+temp_threshold="62,65,70"
+fan_speed="30,60,70,100"
 
 # Open root
 cd /home/breakertt/toys/

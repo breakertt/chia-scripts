@@ -10,7 +10,7 @@ SLEEP=$5
 cd $TMP
 rm -rf *
 
-sleep $((SLEEP*600))
+sleep $((SLEEP))
 
 # Plotting
 PATH=$PATH:/usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon
