@@ -14,4 +14,4 @@ sleep $((SLEEP))
 
 # Plotting
 PATH=$PATH:/usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon
-numactl --cpunodebind=$NODE --localalloc chia plots create -k 32 -n 99 -b 8000 -t $TMP -d $DST 2>&1 | tee $LOG
+chia plots create -k 32 -n 99 -b 8000 -t $TMP -d $DST 2>&1 | tee $LOG
