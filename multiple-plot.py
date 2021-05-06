@@ -15,7 +15,7 @@ def getCommand(ssd, hdd, i):
         node = "0"
     else:
         node = "1"
-    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i*major_sleep_second + ssd_list.index(ssd)*minor_sleep_seconds)
+    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i*major_sleep_seconds + ssd_list.index(ssd)*minor_sleep_seconds)
     print(command)
     return command
 
