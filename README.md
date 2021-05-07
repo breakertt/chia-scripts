@@ -2,6 +2,10 @@
 
 Please translate by yourself if you are not a Chinese speaker.
 
+## 支持平台
+
+Linux
+
 ## 功能
 - NUMA 绑定
 - 自动 SSD -> HDD 分配
