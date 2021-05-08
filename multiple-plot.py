@@ -27,7 +27,9 @@ with open("hdd_list.txt") as f:
    hdd_list = f.read().splitlines()
 ssd_list.remove('')
 
-parallel_per_ssd = 8
+with open("parallel_per_ssd.txt") as f:
+   parallel_per_ssd = int(f.read())
+
 hdd_patition_len = math.ceil((len(ssd_list) * parallel_per_ssd) / len(hdd_list))
 for ssd in ssd_list:
     os.system("tmux kill-session -t " + ssd)
