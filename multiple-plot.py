@@ -19,8 +19,14 @@ def getCommand(ssd, hdd, i):
     print(command)
     return command
 
-ssd_list = ["nvme0n1", "nvme1n1", "nvme2n1", "nvme3n1"]
-hdd_list = ["sda", "sdh", "sdc", "sdd", "sde", "sdf", "sdg", "sdb"]
+with open("ssd_list.txt") as f:
+   ssd_list = f.read().splitlines()
+ssd_list.remove('')
+
+with open("hdd_list.txt") as f:
+   hdd_list = f.read().splitlines()
+ssd_list.remove('')
+
 parallel_per_ssd = 8
 hdd_patition_len = math.ceil((len(ssd_list) * parallel_per_ssd) / len(hdd_list))
 for ssd in ssd_list:
