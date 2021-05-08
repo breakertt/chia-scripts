@@ -21,11 +21,11 @@ def getCommand(ssd, hdd, i):
 
 with open("ssd_list.txt") as f:
    ssd_list = f.read().splitlines()
-ssd_list.remove('')
+ssd_list = [x for x in ssd_list if x]
 
 with open("hdd_list.txt") as f:
    hdd_list = f.read().splitlines()
-ssd_list.remove('')
+hdd_list = [x for x in hdd_list if x]
 
 with open("parallel_per_ssd.txt") as f:
    parallel_per_ssd = int(f.read())
