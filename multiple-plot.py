@@ -2,8 +2,7 @@ import os
 from datetime import datetime
 import time
 import math
-
-sleep_seconds = 1800
+import multiprocessing
 
 def getCommand(ssd, hdd, i):
     script = "/home/breakertt/chia-scripts/plot.sh"
@@ -28,6 +27,9 @@ hdd_list = [x for x in hdd_list if x]
 
 with open("parallel_per_ssd.txt") as f:
    parallel_per_ssd = int(f.read())
+
+plot_hours = 13
+sleep_seconds = (plot_hours * 3600) // (parallel_per_ssd * len(ssd_list))
 
 hdd_patition_len = math.ceil((len(ssd_list) * parallel_per_ssd) / len(hdd_list))
 for ssd in ssd_list:
