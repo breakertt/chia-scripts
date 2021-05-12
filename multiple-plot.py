@@ -3,8 +3,7 @@ from datetime import datetime
 import time
 import math
 
-major_sleep_seconds = 1800
-minor_sleep_seconds = 300
+sleep_seconds = 1800
 
 def getCommand(ssd, hdd, i):
     script = "/home/breakertt/chia-scripts/plot.sh"
@@ -15,7 +14,7 @@ def getCommand(ssd, hdd, i):
         node = "0"
     else:
         node = "1"
-    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str(i*major_sleep_seconds + ssd_list.index(ssd)*minor_sleep_seconds)
+    command = script + " " + tmp + " " + dst + " " + log + " " + node + " " + str((ssd_list.index(ssd) + i*len(ssd_list)) * sleep_seconds)
     print(command)
     return command
 
