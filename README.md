@@ -20,6 +20,8 @@ apt install tmux
 
 ## 使用
 学生，没空提供技术支持，得自己打开源码改
+主要入口是 `multiple-plot.py` 用法 `python3 multiple-plot.py`
+需要先把我这个 repo clone 到 `~` 然后修改几个用户名的路径
 
 ## 未来规划
 
