@@ -9,6 +9,7 @@ SLEEP=$5
 # Delete previous temp files
 cd $TMP
 rm -rf *
+cd /home/breakertt/chia-scripts/
 
 sleep $((SLEEP))
 
