@@ -14,4 +14,8 @@ sleep $((SLEEP))
 
 # Plotting
 PATH=$PATH:/usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon
-chia plots create -k 32 -n 99 -b 8000 -t $TMP -d $DST 2>&1 | tee $LOG
+
+while true; do 
+  DST=$(python3 get-hdd.py)
+  chia plots create -k 32 -n 1 -b 8000 -t $TMP -d $DST 2>&1 | tee $LOG
+done
