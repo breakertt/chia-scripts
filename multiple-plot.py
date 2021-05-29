@@ -28,7 +28,7 @@ hdd_list = [x for x in hdd_list if x]
 with open("parallel_per_ssd.txt") as f:
    parallel_per_ssd = int(f.read())
 
-plot_hours = 13
+plot_hours = 10
 sleep_seconds = (plot_hours * 3600) // (parallel_per_ssd * len(ssd_list))
 
 hdd_patition_len = math.ceil((len(ssd_list) * parallel_per_ssd) / len(hdd_list))
