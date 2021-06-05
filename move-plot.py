@@ -43,7 +43,7 @@ while True:
   root_new = hdd_list_available[0] + '/'
   name_new = plots[idx][1].replace('plot.2.tmp','plot')
   print("Move {} to {}".format(plots[idx][0], root_new + plots[idx][1]))
-  #shutil.move(plots[idx][0], root_new + plots[idx][1])
+  shutil.move(plots[idx][0], root_new + plots[idx][1])
   print("Rename {} to {}".format(root_new + plots[idx][1], root_new + name_new))
-  #os.rename(root_new + plots[idx][1], root_new + name_new)
+  os.rename(root_new + plots[idx][1], root_new + name_new)
   idx += 1
